@@ -10,7 +10,14 @@ namespace SortApp
             for (int i = 0; i < nums.Length; i++)
             {
                 Console.Write("{0}-е число: ", i + 1);
-                nums[i] = Int32.Parse(Console.ReadLine());
+                try
+                {
+                    nums[i] = Int32.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Нужно вводить цифры!");
+                }
             }
 
             int temp;
@@ -50,7 +57,7 @@ namespace SortApp
                 }
                 else
                 {
-                    Console.WriteLine($"Число {checkedNum} не найдено.");
+                    continue;
                 }
             }
         }
